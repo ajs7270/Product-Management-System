@@ -1,0 +1,9 @@
+// Product List
+// Format:: Product Name:Product ID:Value:Current Stock:Safe Stock Level
+// Category Number Food:1 , Office:2 , Misc.:3 , Health:4, Clothing:5
+Coffee: 1-00010:1000:100:50:Test
+//
+T Shirts:5-10011: 5000: 30: 50 
+//
+Pencil:2-50010:100:1000: 500
+//
