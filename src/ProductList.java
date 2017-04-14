@@ -20,7 +20,7 @@ public class ProductList {
 
 
     public void displayProductList(String File){
-        ReadFile newFile = new ReadFile(File);
+        new ReadFile(File);
         System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Product Name", "Product Id", "Category", "Price", "Stock", "MinStock", "Memo");
         System.out.println("----------------------------------------------------------------------------------------------------------");
         for(; printList<index; printList++){
