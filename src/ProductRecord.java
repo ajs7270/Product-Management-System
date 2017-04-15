@@ -8,6 +8,8 @@ public class ProductRecord {
     private String memo;
     private String category;
 
+    ProductRecord(){}
+    
     public ProductRecord(String[] line){
         if(line.length == 5) {
             productName =line[0];

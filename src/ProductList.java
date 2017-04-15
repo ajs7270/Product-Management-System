@@ -3,9 +3,8 @@ public class ProductList {
 
     static ProductRecord[] record = new ProductRecord[100];
     private static int index = 0;
-    int printList = 0;
+    
     ProductList(){}
-
     static int getIndex(){return index;}
 
     public void RecodingProduct(String line){
@@ -20,11 +19,12 @@ public class ProductList {
 
 
     public void displayProductList(String File){
+    	index = 0;
         new ReadFile(File);
         System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Product Name", "Product Id", "Category", "Price", "Stock", "MinStock", "Memo");
         System.out.println("----------------------------------------------------------------------------------------------------------");
-        for(; printList<index; printList++){
-            System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s\n", record[printList].getName() , record[printList].getId(), record[printList].getCategory() , record[printList].getPrice(), record[printList].getStock(), record[printList].getMinStock(),record[printList].getMemo());
+        for(int i = 0; i<index; i++){
+            System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", record[i].getName() , record[i].getId(), record[i].getCategory() , record[i].getPrice(), record[i].getStock(), record[i].getMinStock(),record[i].getMemo());
         }
         System.out.printf("\n");
     }

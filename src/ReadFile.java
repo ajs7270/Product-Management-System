@@ -21,8 +21,6 @@ public class ReadFile {
             if (check.checkProduct()){
                 ProductList product = new ProductList();
                 product.RecodingProduct(line);
-            }else {
-                System.out.println("Irregular product line");
             }
         }
     }
