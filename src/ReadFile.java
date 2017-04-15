@@ -1,3 +1,7 @@
+/*
+ * file을 읽어서 에러가 없으면 ProductList에 던저주는 Class
+ */
+
 import java.io.File;
 import java.util.Scanner;
 
@@ -18,9 +22,8 @@ public class ReadFile {
                 continue;
             ErrorCheck check = new ErrorCheck(line);
 
-            if (check.checkProduct()){
-                ProductList product = new ProductList();
-                product.RecodingProduct(line);
+            if (check.checkProduct()){ // 에러가 있는지 체크하고 에러가 없으면 Product 추가 
+                ProductList.RecodingProduct(line);
             }
         }
     }

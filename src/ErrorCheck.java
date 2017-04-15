@@ -1,4 +1,7 @@
-
+/*
+ * line을 입력받아 이 line에 에러가 있는지 없는지를 검사해주는 Class 
+ * 에러가 있으면 에러사항과 false를 return 하고 없으면 true를 return
+ */
 public class ErrorCheck {
     String[] line_arr;
     String line;

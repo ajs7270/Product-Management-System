@@ -1,3 +1,6 @@
+/*
+ * 정상적인 product의 String[]을 입력받아 각각의 사항을 객체로 저
+ */
 
 public class ProductRecord {
     private String productName;

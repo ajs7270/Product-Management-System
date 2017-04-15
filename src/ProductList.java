@@ -1,3 +1,6 @@
+/*
+ *  product의 list 들을 관리하는 Class index를 잘 조정하면 입력할때마다 추가모드 또는 수정모드로 열 수 있다.
+ */
 
 public class ProductList {
 
@@ -5,14 +8,14 @@ public class ProductList {
     private static int index = 0;
     
     ProductList(){}
-    static int getIndex(){return index;}
-
-    public void RecodingProduct(String line){
-        String[] line_arr = line.split(":");
+   
+    public static void RecodingProduct(String line){// 정상 line을 입력받아 이를 passing하고 배열형태로 저장 
+        String[] line_arr = line.split(":"); 
 
         for(int i=0; i<line_arr.length; i++) { // ":" 로 split한 각각의 원소의 앞,뒤 공백 제거
             line_arr[i]=line_arr[i].trim();
         }
+        
         record[index] = new ProductRecord(line_arr);
         index++;
     }
@@ -29,4 +32,5 @@ public class ProductList {
         System.out.printf("\n");
     }
 
+    static int getIndex(){return index;}
 }
