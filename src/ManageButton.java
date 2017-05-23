@@ -1,4 +1,3 @@
-package project;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -29,7 +28,7 @@ public class ManageButton {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				new AddFrame();
 				
 			}
 		});

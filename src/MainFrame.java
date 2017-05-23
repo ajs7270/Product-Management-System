@@ -1,4 +1,3 @@
-package project;
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;

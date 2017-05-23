@@ -1,4 +1,6 @@
-package project;
+
+
+import java.awt.Color;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -17,6 +19,8 @@ public class ProductTable {
 
 		DefaultTableModel defaultTable = new DefaultTableModel(rowData, columnNames);
 		table = new JTable(defaultTable);
+		table.setBackground(Color.WHITE);
 		tablePane = new JScrollPane(table);
+		tablePane.getViewport().setBackground(Color.white);
 	}
 }
