@@ -22,11 +22,11 @@ public class ProductList {
             line_arr[i]=line_arr[i].trim();
         }
         
-        record[index] = new ProductRecord(line_arr);
+        record.add(new ProductRecord(line_arr));
         index++;
     }
 
-
+/*
     public void displayProductList(String File){
     	index = 0;
         new ReadFile(File);
@@ -37,9 +37,11 @@ public class ProductList {
         }
         System.out.printf("\n");
     }
-
+*/
     public void inputProduct(String File){
         new ReadFile(File);
+
+        
     }
 
     static int getIndex(){return index;}
