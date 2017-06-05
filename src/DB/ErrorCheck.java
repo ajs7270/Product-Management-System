@@ -58,7 +58,7 @@ public class ErrorCheck {
 
 
         for (int i = 0; i < ProductList.getIndex(); i++) { // id가 같을때 예외처리
-            if(line_arr[1].equals(ProductList.record[i].getId())){
+            if(line_arr[1].equals(ProductList.record.get(i).getId())){
             	System.out.println("ID Conflict");
             	System.out.println("Skip the input line :" + line);
                 return false;

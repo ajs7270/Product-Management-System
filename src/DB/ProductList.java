@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ProductList {
 
-    static List<ProductRecord> record = new ArrayList<ProductRecord>();
+    public static List<ProductRecord> record = new ArrayList<ProductRecord>();
     private static int index = 0;
     
     public ProductList(){}
@@ -29,6 +29,7 @@ public class ProductList {
 /*
     public void displayProductList(String File){
     	index = 0;
+
         new ReadFile(File);
         System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Product Name", "Product Id", "Category", "Price", "Stock", "MinStock", "Memo");
         System.out.println("----------------------------------------------------------------------------------------------------------");
@@ -38,11 +39,9 @@ public class ProductList {
         System.out.printf("\n");
     }
 */
-    public void inputProduct(String File){
+    public void inputProductFile(String File){
         new ReadFile(File);
-
-        
     }
 
-    static int getIndex(){return index;}
+    public static int getIndex(){return index;}
 }

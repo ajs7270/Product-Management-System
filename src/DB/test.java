@@ -2,7 +2,7 @@ package DB;
 
 /**
  * Created by 5p on 2017-04-14.
- */
+ *//*
 
 public class test {
 
@@ -15,5 +15,4 @@ public class test {
         newList.displayProductList("productlist-norm2.data");
     }
 }
-
-
+*/
