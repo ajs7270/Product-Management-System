@@ -1,6 +1,9 @@
-/*
+package DB;/*
  *  product의 list 들을 관리하는 Class index를 잘 조정하면 입력할때마다 추가모드 또는 수정모드로 열 수 있다.
  */
+
+import DB.ProductRecord;
+import DB.ReadFile;
 
 public class ProductList {
 
