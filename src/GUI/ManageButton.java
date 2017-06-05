@@ -13,26 +13,41 @@ public class ManageButton {
 	JPanel panel;
 
 	public ManageButton() {
-		JButton btn1 = new JButton("Add");
-		JButton btn2 = new JButton("Delete");
-		JButton btn3 = new JButton("Modify");
-		JButton btn4 = new JButton("Save File");
+		JButton addBtn = new JButton("Add");
+		JButton deleteBtn = new JButton("Delete");
+		JButton modifyBtn = new JButton("Modify");
+		JButton saveFileBtn = new JButton("Save File");
 
 		panel = new JPanel();
 
 		panel.setLayout(new GridLayout(4, 1));
-		panel.add(btn1);
-		panel.add(btn2);
-		panel.add(btn3);
-		panel.add(btn4);
-		
-		btn1.addActionListener(new ActionListener() {
-			
+		panel.add(addBtn);
+		panel.add(deleteBtn);
+		panel.add(modifyBtn);
+		panel.add(saveFileBtn);
+
+		addBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				new AddFrame();
-				
+			}
+		});
+		deleteBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+		modifyBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new ModifyFrame();
+			}
+		});
+		saveFileBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
 			}
 		});
 	}

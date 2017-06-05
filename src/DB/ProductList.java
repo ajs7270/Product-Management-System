@@ -5,12 +5,15 @@ package DB;/*
 import DB.ProductRecord;
 import DB.ReadFile;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProductList {
 
-    static ProductRecord[] record = new ProductRecord[100];
+    static List<ProductRecord> record = new ArrayList<ProductRecord>();
     private static int index = 0;
     
-    ProductList(){}
+    public ProductList(){}
    
     public static void RecodingProduct(String line){// 정상 line을 입력받아 이를 passing하고 배열형태로 저장 
         String[] line_arr = line.split(":"); 
@@ -33,6 +36,10 @@ public class ProductList {
             System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", record[i].getName() , record[i].getId(), record[i].getCategory() , record[i].getPrice(), record[i].getStock(), record[i].getMinStock(),record[i].getMemo());
         }
         System.out.printf("\n");
+    }
+
+    public void inputProduct(String File){
+        new ReadFile(File);
     }
 
     static int getIndex(){return index;}
