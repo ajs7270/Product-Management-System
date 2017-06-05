@@ -10,12 +10,12 @@ public class MainFrame {
 	        
 	        ProductTable table = new ProductTable();
 	        ManageButton button = new ManageButton();
-	        
-	        //¿ä±¸»çÇ×¿¡ ¸ÂÃß¾î GUI¿ä¼Ò¸¦ ±¸¼º 
+
+		 	//ìš”êµ¬ì‚¬í•­ì— ë§ì¶”ì–´ GUIìš”ì†Œë¥¼ êµ¬ì„±
 	        frm.add(table.tablePane,BorderLayout.CENTER);
 	        frm.add(button.panel, BorderLayout.EAST);
 	        frm.setVisible(true);
-	        //x¹öÆ° Å¬¸¯ ½Ã Á¾·á
+			//xë²„íŠ¼ í´ë¦­ ì‹œ ì¢…ë£Œ
 	        frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    }
 }

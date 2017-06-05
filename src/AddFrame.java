@@ -24,14 +24,14 @@ public class AddFrame {
 
 		panel1 = new JPanel();
 		panel1.setLayout(new GridLayout(2, 7));
-		
-		panel1.add(new JLabel("Á¦Ç°¸í"));
-		panel1.add(new JLabel("Á¦Ç°ID"));
-		panel1.add(new JLabel("Ä«Å×°í¸®"));
-		panel1.add(new JLabel("°¡°Ý"));
-		panel1.add(new JLabel("Àç°í¼ö"));
-		panel1.add(new JLabel("ÃÖ¼ÒÀç°í·®"));
-		panel1.add(new JLabel("±âÅ¸ ¸Þ¸ð"));
+
+		panel1.add(new JLabel("ì œí’ˆëª…"));
+		panel1.add(new JLabel("ì œí’ˆID"));
+		panel1.add(new JLabel("ì¹´í…Œê³ ë¦¬"));
+		panel1.add(new JLabel("ê°€ê²©"));
+		panel1.add(new JLabel("ìž¬ê³ ìˆ˜"));
+		panel1.add(new JLabel("ìµœì†Œìž¬ê³ ëŸ‰"));
+		panel1.add(new JLabel("ê¸°íƒ€ ë©”ëª¨"));
 		
 		for(int i = 0; i<7; i++){
 			panel1.add(new JTextField());

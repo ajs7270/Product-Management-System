@@ -1,7 +1,7 @@
 /**
  * Created by 5p on 2017-04-14.
  */
-
+/*
 public class test {
 
     public static void main(String[] args) {
@@ -15,5 +15,5 @@ public class test {
 }
 
 
-
+*/
 
