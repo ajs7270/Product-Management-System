@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class ProductTable {
 	JTable table;
 	JScrollPane tablePane;
-	String
+
 	public ProductTable() {
 		// TODO Auto-generated constructor stub
 		String columnNames[] = { "제품명", "제품ID", "카테고리", "가격", "재고수", "최소재고량", "기타 메모" };
@@ -25,6 +25,7 @@ public class ProductTable {
 		// TODO Auto-generated constructor stub
 		String columnNames[] = { "제품명", "제품ID", "카테고리", "가격", "재고수", "최소재고량", "기타 메모" };
 
+		String rowData[] = list.record.toArray();
 		// 예시데이터
 		String rowData[][] = { { "Coffee", "1-00010", "1", "1000", "100", "50", "Test1" },
 				{ "연필", "2-50010", "2", "100", "1000", "500", "" } };
