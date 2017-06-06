@@ -17,7 +17,7 @@ public class MainFrame {
 
 	    ProductTable mainTable = new ProductTable(newList);
 		mainTable.addMainTable();
-	    ManageButton button = new ManageButton(mainTable);
+	    ManageButton button = new ManageButton(mainTable, newList);
 
 		//요구사항에 맞추어 GUI요소를 구성
 	    frm.add(mainTable.tablePane,BorderLayout.CENTER);

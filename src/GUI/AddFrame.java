@@ -2,6 +2,7 @@ package GUI;
 
 import DB.ErrorCheck;
 import DB.ProductList;
+import DB.ProductRecord;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -17,7 +18,7 @@ import javax.swing.JTextField;
 public class AddFrame {
 	JPanel panel1, panel2;
 	AddFrame(){};
-	public AddFrame(ProductTable mainTable) {
+	public AddFrame(ProductTable mainTable, ProductList newList) {
 		// TODO Auto-generated constructor stub
 		JFrame frm = new JFrame("Add A New Product Line");
 		JButton done = new JButton("done");
@@ -61,7 +62,7 @@ public class AddFrame {
 					inputData[i] = textField[i].getText();
 				}
 				if(errorCheck(inputData)){
-					doneBtn(mainTable,inputData);
+					doneBtn(mainTable,newList,inputData);
 					frm.dispose();
 					frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				}else{
@@ -70,12 +71,23 @@ public class AddFrame {
 			}
 		});
 	}
-	public void doneBtn(ProductTable mainTable,String[] inputData){
+	public void doneBtn(ProductTable mainTable, ProductList newList, String[] inputData){
 		mainTable.defaultTable.addRow(inputData);
+		newList.record.add(new ProductRecord(inputData));
 	}
 
 	public boolean errorCheck(String[] inputData){
-		ErrorCheck check = new ErrorCheck(inputData);
+
+		String[] checkData = new String[6];
+
+		for(int i = 0 , j = 0; i<7; i++, j++){
+			if(i == 2){ // 카테고리 데이터는 체크하지 않음
+				j = j-1; continue;
+			}
+			checkData[j] = inputData[i];
+		}
+
+		ErrorCheck check = new ErrorCheck(checkData);
 
 		if (check.checkProduct()){ // 에러가 있는지 체크하고 에러가 없으면 Product 추가
 			return true;

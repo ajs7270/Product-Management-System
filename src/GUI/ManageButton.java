@@ -1,5 +1,6 @@
 package GUI;
 
+import DB.ProductList;
 import GUI.AddFrame;
 
 import java.awt.GridLayout;
@@ -13,7 +14,7 @@ public class ManageButton {
 	JPanel panel;
 
 	public ManageButton(){};
-	public ManageButton(ProductTable mainTable) {
+	public ManageButton(ProductTable mainTable, ProductList newList) {
 		JButton addBtn = new JButton("Add");
 		JButton deleteBtn = new JButton("Delete");
 		JButton modifyBtn = new JButton("Modify");
@@ -30,7 +31,7 @@ public class ManageButton {
 		addBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new AddFrame(mainTable);
+				new AddFrame(mainTable, newList);
 			}
 		});
 		deleteBtn.addActionListener(new ActionListener() {
@@ -44,7 +45,7 @@ public class ManageButton {
 		modifyBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new ModifyFrame(mainTable);
+				new ModifyFrame(mainTable, newList);
 			}
 		});
 		saveFileBtn.addActionListener(new ActionListener() {
