@@ -17,29 +17,60 @@ public class ProductRecord {
         if(line.length == 5) {
             productName =line[0];
             productId = line[1];
+            category = findCategory(productId);
             price = line[2];
             stock = line[3];
             minStock = line[4];
             memo = "";
-        }else{
+        }else if(line.length == 6){
             productName =line[0];
             productId = line[1];
+            category = findCategory(productId);
             price = line[2];
             stock = line[3];
             minStock = line[4];
             memo = line[5];
+        }else{
+            productName =line[0];
+            productId = line[1];
+            price = line[3];
+            stock = line[4];
+            minStock = line[5];
+            memo = line[6];
+            if(line[2].isEmpty()){
+                category = findCategory(productId);
+            }else{
+                category = line[2];
+            }
         }
     }
 
     public ProductRecord(String productName, String productId, String price, String stock, String minStock, String memo){
         this.productName = productName;
         this.productId = productId;
+        this.category = findCategory(productId);
         this.price = price;
         this.stock = stock;
         this.minStock = minStock;
         this.memo = memo;
     }
 
+    public static String findCategory(String id) {
+        id = id.substring(0, 1);
+        if (id.contains("1")) {
+            return "Food";
+        } else if (id.contains("2")) {
+            return "Office";
+        } else if (id.contains("3")) {
+            return "Misc";
+        } else if (id.contains("4")) {
+            return "Health";
+        } else if (id.contains("5")) {
+            return "Clothing";
+        } else {
+            return "Error";
+        }
+    }
     public void setName(String productName){
         this.productName=productName;
     }
@@ -97,7 +128,7 @@ public class ProductRecord {
     }
 
     public String[] getData(){
-        String data[] = {productName,productId,category,price,stock,minStock,memo};
+        String data[] = {productName, productId, category, price, stock, minStock, memo};
         return data;
     }
 

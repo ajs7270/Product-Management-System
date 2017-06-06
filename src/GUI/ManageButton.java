@@ -1,6 +1,7 @@
 package GUI;
 
 import DB.ProductList;
+import DB.SaveFile;
 import GUI.AddFrame;
 
 import java.awt.GridLayout;
@@ -52,7 +53,7 @@ public class ManageButton {
 		saveFileBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				new SaveFile(newList.fileName, newList.record);
 			}
 		});
 	}

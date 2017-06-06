@@ -7,9 +7,9 @@ import javax.swing.JFrame;
 
 public class MainFrame {
 	  public static void main(String[] args){
-
+	  	String filename = "productlist-norm.data";
 		ProductList newList = new ProductList();
-		newList.inputProductFile("productlist-norm.data");
+		newList.inputProductFile(filename);
 
 	  	JFrame frm = new JFrame("Product List");
 	  	frm.setBounds(500,500,800,200);

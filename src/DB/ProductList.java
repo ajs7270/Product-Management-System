@@ -13,7 +13,7 @@ import java.util.Vector;
 public class ProductList {
 
     public static Vector<ProductRecord> record = new Vector<ProductRecord>();
-    public Scanner dataFile;
+    public String fileName;
     private static int index = 0;
 
     public ProductList(){}
@@ -29,7 +29,7 @@ public class ProductList {
         index++;
     }
 
-/*
+
     public void displayProductList(String File){
     	index = 0;
 
@@ -37,14 +37,14 @@ public class ProductList {
         System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Product Name", "Product Id", "Category", "Price", "Stock", "MinStock", "Memo");
         System.out.println("----------------------------------------------------------------------------------------------------------");
         for(int i = 0; i<index; i++){
-            System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", record[i].getName() , record[i].getId(), record[i].getCategory() , record[i].getPrice(), record[i].getStock(), record[i].getMinStock(),record[i].getMemo());
+            System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", record.get(i).getName() , record.get(i).getId(), record.get(i).getCategory() , record.get(i).getPrice(), record.get(i).getStock(), record.get(i).getMinStock(),record.get(i).getMemo());
         }
         System.out.printf("\n");
     }
-*/
+
     public void inputProductFile(String File){
-        ReadFile newFile = new ReadFile(File);
-        dataFile = newFile.input;
+        new ReadFile(File);
+        fileName = File;
     }
 
     public static int getIndex(){return index;}

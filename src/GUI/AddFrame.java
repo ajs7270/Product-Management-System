@@ -61,7 +61,7 @@ public class AddFrame {
 				for(int i= 0; i<7; i++){
 					inputData[i] = textField[i].getText();
 				}
-				if(errorCheck(inputData)){
+				if(errorCheck(inputData,mainTable)){
 					doneBtn(mainTable,newList,inputData);
 					frm.dispose();
 					frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,12 +76,15 @@ public class AddFrame {
 		newList.record.add(new ProductRecord(inputData));
 	}
 
-	public boolean errorCheck(String[] inputData){
+	public boolean errorCheck(String[] inputData,ProductTable mainTable){
 
 		String[] checkData = new String[6];
 
 		for(int i = 0 , j = 0; i<7; i++, j++){
-			if(i == 2){ // 카테고리 데이터는 체크하지 않음
+			if(i == 2){ // 카테고리 데이터가 채워져 있다면 검사하지 않고 자동으로 id를 분석하여 추가
+				if(inputData[i].isEmpty()){
+					inputData[i] = ProductRecord.findCategory(inputData[1]);
+				}
 				j = j-1; continue;
 			}
 			checkData[j] = inputData[i];

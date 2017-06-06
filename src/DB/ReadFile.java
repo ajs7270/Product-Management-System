@@ -2,8 +2,6 @@ package DB;/*
  * file을 읽어서 에러가 없으면 ProductList에 던저주는 Class
  */
 
-import DB.ErrorCheck;
-
 import java.io.File;
 import java.util.Scanner;
 

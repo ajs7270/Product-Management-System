@@ -10,9 +10,9 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class ProductTable {
-	JTable table;
-	JScrollPane tablePane;
-	DefaultTableModel defaultTable;
+	public JTable table;
+	public JScrollPane tablePane;
+	public DefaultTableModel defaultTable;
 
 	public ProductTable() {
 		String columnNames[] = { "제품명", "제품ID", "카테고리", "가격", "재고수", "최소재고량", "기타 메모" };
@@ -30,7 +30,6 @@ public class ProductTable {
 		for(int i = 0;i <list.getIndex();i++){
 			defaultTable.addRow(list.record.get(i).getData());
 		}
-
 	}
 
 	public void addMainTable(){
