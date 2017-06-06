@@ -15,12 +15,12 @@ public class MainFrame {
 	  	frm.setBounds(500,500,800,200);
 	    frm.setLayout(new BorderLayout());
 
-	    ProductTable table = new ProductTable(newList);
-
-	    ManageButton button = new ManageButton();
+	    ProductTable mainTable = new ProductTable(newList);
+		mainTable.addMainTable();
+	    ManageButton button = new ManageButton(mainTable);
 
 		//요구사항에 맞추어 GUI요소를 구성
-	    frm.add(table.tablePane,BorderLayout.CENTER);
+	    frm.add(mainTable.tablePane,BorderLayout.CENTER);
 	    frm.add(button.panel, BorderLayout.EAST);
 	    frm.setVisible(true);
 		//x버튼 클릭 시 종료

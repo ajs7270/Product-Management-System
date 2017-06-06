@@ -12,7 +12,8 @@ import javax.swing.JPanel;
 public class ManageButton {
 	JPanel panel;
 
-	public ManageButton() {
+	public ManageButton(){};
+	public ManageButton(ProductTable mainTable) {
 		JButton addBtn = new JButton("Add");
 		JButton deleteBtn = new JButton("Delete");
 		JButton modifyBtn = new JButton("Modify");
@@ -29,19 +30,21 @@ public class ManageButton {
 		addBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new AddFrame();
+				new AddFrame(mainTable);
 			}
 		});
 		deleteBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				if(mainTable.table.getSelectedRow() != -1){
+					mainTable.defaultTable.removeRow(mainTable.table.getSelectedRow());
+				}
 			}
 		});
 		modifyBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new ModifyFrame();
+				new ModifyFrame(mainTable);
 			}
 		});
 		saveFileBtn.addActionListener(new ActionListener() {

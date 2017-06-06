@@ -1,5 +1,8 @@
 package GUI;
 
+import DB.ErrorCheck;
+import DB.ProductList;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -13,8 +16,8 @@ import javax.swing.JTextField;
 
 public class AddFrame {
 	JPanel panel1, panel2;
-
-	public AddFrame() {
+	AddFrame(){};
+	public AddFrame(ProductTable mainTable) {
 		// TODO Auto-generated constructor stub
 		JFrame frm = new JFrame("Add A New Product Line");
 		JButton done = new JButton("done");
@@ -32,11 +35,13 @@ public class AddFrame {
 		panel1.add(new JLabel("재고수"));
 		panel1.add(new JLabel("최소재고량"));
 		panel1.add(new JLabel("기타 메모"));
-		
+
+		JTextField[] textField = new JTextField[7];
+
 		for(int i = 0; i<7; i++){
-			panel1.add(new JTextField());
+			textField[i] = new JTextField();
+			panel1.add(textField[i]);
 		}
-		
 
 		panel2 = new JPanel();
 		panel2.setLayout(new GridLayout(1, 1));
@@ -51,9 +56,32 @@ public class AddFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				frm.dispose();
-				frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				String inputData[] = new String[7];
+				for(int i= 0; i<7; i++){
+					inputData[i] = textField[i].getText();
+				}
+				if(errorCheck(inputData)){
+					doneBtn(mainTable,inputData);
+					frm.dispose();
+					frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				}else{
+					System.out.println("잘못된 입력 값 입니다.");
+				}
 			}
 		});
 	}
+	public void doneBtn(ProductTable mainTable,String[] inputData){
+		mainTable.defaultTable.addRow(inputData);
+	}
+
+	public boolean errorCheck(String[] inputData){
+		ErrorCheck check = new ErrorCheck(inputData);
+
+		if (check.checkProduct()){ // 에러가 있는지 체크하고 에러가 없으면 Product 추가
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 }
