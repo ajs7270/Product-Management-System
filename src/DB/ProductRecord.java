@@ -96,7 +96,13 @@ public class ProductRecord {
         return memo;
     }
 
+    public String[] getData(){
+        String data[] = {productName,productId,category,price,stock,minStock,memo};
+        return data;
+    }
+
     public void print(){
         System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s", productName, productId, price, stock, minStock, memo);
     }
+
 }

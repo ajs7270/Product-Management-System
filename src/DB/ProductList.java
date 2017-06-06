@@ -7,12 +7,15 @@ import DB.ReadFile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.Vector;
 
 public class ProductList {
 
-    public static List<ProductRecord> record = new ArrayList<ProductRecord>();
+    public static Vector<ProductRecord> record = new Vector<ProductRecord>();
+    public Scanner dataFile;
     private static int index = 0;
-    
+
     public ProductList(){}
    
     public static void RecodingProduct(String line){// 정상 line을 입력받아 이를 passing하고 배열형태로 저장 
@@ -40,7 +43,8 @@ public class ProductList {
     }
 */
     public void inputProductFile(String File){
-        new ReadFile(File);
+        ReadFile newFile = new ReadFile(File);
+        dataFile = newFile.input;
     }
 
     public static int getIndex(){return index;}

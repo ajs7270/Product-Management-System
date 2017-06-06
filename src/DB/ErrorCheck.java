@@ -7,7 +7,7 @@ package DB;
 public class ErrorCheck {
     String[] line_arr;
     String line;
-    ErrorCheck(String line){
+    public ErrorCheck(String line){
     	this.line = line;
         line_arr = line.split(":");
 
@@ -18,8 +18,11 @@ public class ErrorCheck {
             }
         }
     }
+    public ErrorCheck(String[] line){
+        this.line_arr= line;
+    }
 
-    boolean checkProduct() {
+    public boolean checkProduct() {
         int price;
         int stock;
         int minStock;
