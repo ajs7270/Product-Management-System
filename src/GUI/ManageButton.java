@@ -47,7 +47,11 @@ public class ManageButton {
 		modifyBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new ModifyFrame(mainTable, newList);
+				if(mainTable.table.getSelectedRow() != -1){
+					new ModifyFrame(mainTable, newList);
+				}else{
+					System.out.println("not selected row!");
+				}
 			}
 		});
 		saveFileBtn.addActionListener(new ActionListener() {
