@@ -58,16 +58,28 @@ public class AddFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				String inputData[] = new String[7];
+				int checkNum = 0;
 				for(int i= 0; i<7; i++){
 					inputData[i] = textField[i].getText();
+					if(i != 2){
+						if(!textField[i].getText().isEmpty()){
+							checkNum++;
+						}
+					}
 				}
-				if(errorCheck(inputData,mainTable)){
-					doneBtn(mainTable,newList,inputData);
-					frm.dispose();
-					frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				if(checkNum == 6){
+					if(errorCheck(inputData,mainTable)){
+						doneBtn(mainTable,newList,inputData);
+						frm.dispose();
+						frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					}else{
+						System.out.println("잘못된 입력 값 입니다.");
+					}
 				}else{
-					System.out.println("잘못된 입력 값 입니다.");
+					System.out.println("모든 항목을 기입해주세요");
 				}
+
+
 			}
 		});
 	}
