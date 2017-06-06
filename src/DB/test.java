@@ -1,18 +1,19 @@
 package DB;
 
-/**
- * Created by 5p on 2017-04-14.
- *//*
+
+import java.util.Vector;
 
 public class test {
 
     public static void main(String[] args) {
+        Vector<String> testVector = new Vector<String>();
+        testVector.add("1");
+        testVector.add("2");
+        testVector.add("3");
+        testVector.remove(1);
 
-        ProductList newList = new ProductList();
+        System.out.println(testVector);
 
-        newList.displayProductList("productlist-norm.data");
-        newList.displayProductList("productlist-norm1.data");
-        newList.displayProductList("productlist-norm2.data");
     }
 }
-*/
+

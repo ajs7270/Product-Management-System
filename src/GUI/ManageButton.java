@@ -39,6 +39,7 @@ public class ManageButton {
 			public void actionPerformed(ActionEvent e) {
 				if(mainTable.table.getSelectedRow() != -1){
 					mainTable.defaultTable.removeRow(mainTable.table.getSelectedRow());
+					newList.record.remove(mainTable.table.getSelectedRow());
 				}
 			}
 		});
