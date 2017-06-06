@@ -41,6 +41,8 @@ public class ManageButton {
 				if(mainTable.table.getSelectedRow() != -1){
 					newList.record.remove(mainTable.table.getSelectedRow());
 					mainTable.defaultTable.removeRow(mainTable.table.getSelectedRow());
+				}else{
+					System.out.println("not selected row!");
 				}
 			}
 		});
