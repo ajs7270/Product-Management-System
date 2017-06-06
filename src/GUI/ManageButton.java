@@ -39,8 +39,8 @@ public class ManageButton {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(mainTable.table.getSelectedRow() != -1){
-					mainTable.defaultTable.removeRow(mainTable.table.getSelectedRow());
 					newList.record.remove(mainTable.table.getSelectedRow());
+					mainTable.defaultTable.removeRow(mainTable.table.getSelectedRow());
 				}
 			}
 		});
