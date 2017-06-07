@@ -10,19 +10,20 @@ public class ModifyButton extends AddButton {
         super(data,defaultTable,productTable);
     }
 
-    private boolean clickDone(Vector<ProductRecord> data, DefaultTableModel defaultTable,String[] saveProduct,String[] product,JTable productTable){
+    @Override
+    boolean clickDone(Vector<ProductRecord> data, DefaultTableModel defaultTable,String[] saveProduct,String[] product,JTable productTable){
         ErrorCheck check = new ErrorCheck(product);
+        int selected = productTable.getSelectedRow();
 
-        if(product[6].isEmpty()){
-            product[6] = ProductRecord.setCategory(product[1]);
-            saveProduct[2] = product[6];
-        }
+        product[6] = ProductRecord.setCategory(product[1]);
+        saveProduct[2] = product[6];
 
-        if(check.IDcheck(data,product[1],productTable.getSelectedRow())){
-            defaultTable.insertRow(productTable.getSelectedRow(),saveProduct);
-            defaultTable.removeRow(productTable.getSelectedRow()+1);
-            data.add(productTable.getSelectedRow(),new ProductRecord(product));
-            data.remove(productTable.getSelectedRow()+1);
+
+        if(check.IDcheck(data,product[1],selected)){
+            defaultTable.removeRow(selected);
+            defaultTable.insertRow(selected,product);
+            data.remove(selected);
+            data.add(selected,new ProductRecord(saveProduct));
             return true;
         }else{
             return false;

@@ -2,7 +2,7 @@ import java.util.Vector;
 
 public class ProductList {
     private String path;
-    private static Vector<ProductRecord> data = new Vector<ProductRecord>();
+    public static Vector<ProductRecord> data = new Vector<ProductRecord>();
 
     public ProductList(String path){
         this.path = path;

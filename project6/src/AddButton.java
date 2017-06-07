@@ -56,13 +56,15 @@ public class AddButton {
                 //text field에 적힌 값들을 읽어옴 || 빈칸이 2개 이상이면 예외처리
                 for(int i = 0,j =0 ;i<7;i++,j++){
                     product[i] = textField[i].getText();
+                    System.out.println(product[i]);
                     if(textField[i].getText().isEmpty()){emptyField++; }
                     if(i == 2) {
                         saveProduct[6] = textField[i].getText();
                         j = j - 1;
                         continue;
+                    }else{
+                        saveProduct[j] = textField[i].getText();
                     }
-                    saveProduct[j] = textField[i].getText();
                 }
 
                 if(emptyField > 1){
@@ -83,16 +85,15 @@ public class AddButton {
         });
     }
 
-    private boolean clickDone(Vector<ProductRecord> data, DefaultTableModel defaultTable,String[] saveProduct,String[] product,JTable productTable){
+    boolean clickDone(Vector<ProductRecord> data, DefaultTableModel defaultTable,String[] saveProduct,String[] product,JTable productTable){
         ErrorCheck check = new ErrorCheck(product);
 
         product[6] = ProductRecord.setCategory(product[1]);
         saveProduct[2] = product[6];
-        System.out.println("wlktn");
 
         if(check.IDcheck(data, product[1])){
-            data.add(new ProductRecord(saveProduct));
-            defaultTable.addRow(product);
+            data.add(new ProductRecord(product));
+            defaultTable.addRow(saveProduct);
             return true;
         }else{
             return false;

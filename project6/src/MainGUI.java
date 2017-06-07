@@ -7,9 +7,9 @@ import java.util.Vector;
 
 public class MainGUI {
     private String[] columnName = {"제품명", "제품ID", "카테고리", "가격", "재고수", "최소재고량", "기타 메모"};
-    private DefaultTableModel defaultTable = new DefaultTableModel(columnName,0);
-    private JTable table;
-    private JScrollPane scrollTablePanel;
+    DefaultTableModel defaultTable = new DefaultTableModel(columnName,0);
+    JTable table;
+    JScrollPane scrollTablePanel;
     MainGUI(Vector<ProductRecord> data, String path){
 
         //gui의 가장 바탕이 되는 창을 만든다.

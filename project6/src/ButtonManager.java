@@ -32,7 +32,7 @@ public class ButtonManager {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int selected = productTable.getSelectedRow();
-                if(selected != 1){
+                if(selected != -1){
                     data.remove(selected);
                     defaultTable.removeRow(selected);
                 }
