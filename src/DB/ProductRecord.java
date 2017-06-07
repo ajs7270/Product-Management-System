@@ -2,7 +2,8 @@ package DB;/*
  * 정상적인 product의 String[]을 입력받아 각각의 사항을 객체로 저장 
  */
 
-public class ProductRecord {
+public class
+ProductRecord {
     private String productName;
     private String productId;
     private String price;
@@ -62,7 +63,7 @@ public class ProductRecord {
         } else if (id.contains("2")) {
             return "Office";
         } else if (id.contains("3")) {
-            return "Misc";
+            return "Muisc";
         } else if (id.contains("4")) {
             return "Health";
         } else if (id.contains("5")) {
